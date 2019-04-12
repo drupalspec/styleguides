@@ -203,6 +203,12 @@ _This, not so much…_
 <svg></svg>
 ```
 
+### Keep `<defs>` containers
+
+The `<def>` element is used to store graphical objects that will be used at a later time, like `linearGradient` for example. This element will appear to be an extraneous element that would commonly get removed during SVG optimization but due to issues with graphical elements in Safari, this should not be removed. [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs) explains:
+
+> Defining these objects inside of a `<defs>` element promotes understandability of the SVG content and is beneficial to the overall accessibility of the document.
+
 ### Remove `<style>` tags
 
 Many image apps add `fill`, `stroke` or other visual properties to inner elements using classes and a `style` tag. When you're using multiple SVGs in a page, those classes may overlap and cause unexpected style issues. Convert all `style` blocks to inline attributes on child elements.
